@@ -114,7 +114,8 @@ localStorage.user = JSON.stringify({email: "george@foreman.net"})
 
 
 var getCache = function(x){ return Maybe(localStorage[x]); }.toIO();
-var ex6 = undefined;
+var getParsedEmail = compose(_.get('email'), JSON.parse);
+var ex6 = compose(map(map(getParsedEmail)), getCache) ;
 
 assertDeepEqual(Maybe("george@foreman.net"), runIO(ex6('user')))
 document.write("exercise 6...ok!<br />")
