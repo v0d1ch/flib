@@ -2,9 +2,8 @@
 
 	'use strict';
 
+	var _ = require('./flib');
 	var R = require('ramda');
-	var flib = require('./flib');
-	var log = function(x) { console.log(x); return x;  };
 
 	// var eventValue = R.compose(R.prop('value'), R.prop('target'));
 
@@ -25,8 +24,8 @@
 	// var showBindedValues = R.compose(R.map(attachToElm),log, valueStream);
 
 	// showBindedValues('test');
-
-	var a = Maybe(3);
+	console.log(_);
+	var a = _.Maybe(3);
 	console.log(a.toString());
 
 	// Bacon.fromEvent(document.getElementById("username"), "keyup").onValue(function(event){

@@ -1,7 +1,12 @@
 /*
+ * fl
+ */
+var fl = function(){
+
+/*
  * Maybe
  */
-window.Maybe = function(value) {
+this.Maybe = function(value) {
 	var Nothing = {
 		bind: function(fn) {
 			return this;
@@ -47,8 +52,13 @@ window.Maybe = function(value) {
 };
 
 
+
+
 /*
  * Log
  */
-window.log = function(x) { console.log(x); return x;};
+this.log = function(x) { console.log(x); return x;};
 
+};
+
+module.exports = new fl();

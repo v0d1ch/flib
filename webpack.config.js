@@ -10,7 +10,7 @@ module.exports = {
 	},
 
 	devtool: 'inline-source-map',
-	debug  : false,
+	debug  : true,
 	devServer: { inline: true },
 
 	module : {
