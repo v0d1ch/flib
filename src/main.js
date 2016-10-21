@@ -1,31 +1,35 @@
 (function () {
+
 	'use strict';
 
 	var R = require('ramda');
+	var flib = require('./flib');
 	var log = function(x) { console.log(x); return x;  };
 
-	var eventValue = R.compose(R.prop('value'), R.prop('target'));
+	// var eventValue = R.compose(R.prop('value'), R.prop('target'));
 
-	var listen = R.curry(function (event, target) {
-		return Bacon.fromEvent(document.getElementById(target), event).onValue(function(evt){
-			return eventValue(evt);
-		});
-	});
+	// var listen = R.curry(function (event, target) {
+	// 	return Bacon.fromEvent(document.getElementById(target), event).onValue(function(evt){
+	// 		return eventValue(evt);
+	// 	});
+	// });
 
-	var attachToElm = R.curry(function(elm, val){
-		document.getElementById(elm).innerText = val;
-	});
+	// var attachToElm = R.curry(function(elm, val){
+	// 	document.getElementById(elm).innerText = val;
+	// });
 
-	var valueStream = R.compose(R.map(eventValue), listen('keyup'));
+	// var valueStream = R.compose(R.map(eventValue), listen('keyup'));
 
-	var inputStream = valueStream('username');
+	// var inputStream = valueStream('username');
 
-	var showBindedValues = R.compose(R.map(attachToElm),log, valueStream);
+	// var showBindedValues = R.compose(R.map(attachToElm),log, valueStream);
 
-	showBindedValues('test');
-	console.log(eventValue);
+	// showBindedValues('test');
+
+	var a = Maybe(3);
+	console.log(a.toString());
 
 	// Bacon.fromEvent(document.getElementById("username"), "keyup").onValue(function(event){
 		// 	document.getElementById("test").innerText = event.target.value;
-	// });
+// });
 })();
