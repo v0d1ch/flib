@@ -12,7 +12,7 @@ $ bower install flib --save
 
  ```
 
-
+	//basic
 	var a = {
 		'key1':'a',
 		'key2':'b'
@@ -25,5 +25,24 @@ $ bower install flib --save
 	
 	var b = F.Maybe(a.key3);
 	b.hasValue(); // -> false , key3 does not exist in object a 
+	
+	//bind and maybe
+	var a = 'flib';
+	var b = F.Maybe(a).bind(function(x){
+		return x.toUpperCase();
+	}).maybe('No name', function(y){
+		return y;
+	});
+
+	console.log(b); // ->FLIB
+
+	var d = F.Maybe(null);
+
+	var e = d.maybe('No name', function(y){
+		return y;
+	});
+
+	console.log(e); // -> 'No name'
+
         
  ``` 
