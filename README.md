@@ -1,6 +1,6 @@
 ###fLib - functional helper library
-:: JS implementations of constructs from functional world that make your life easier in everyday work with JS</p>
-- Inspired by Haskell computational patterns</p>
+:: JS implementations of constructs from functional world that make your life easier in everyday work with JS
+Inspired by Haskell computational patterns
 
-##Available constructs</h3>
+##Available constructs
  - Maybe
