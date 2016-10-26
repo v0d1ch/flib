@@ -1,7 +1,7 @@
 {
   "name": "flib",
   "description": "Functional javascript helper",
-  "main": "index.html",
+  "main": "src/flib.js",
   "authors": [
     "Sasa Bogicevic"
   ],
