@@ -7,7 +7,6 @@
  - Maybe
 
  ```
-
 	var f = require('./flib');
 
 	var a = {
@@ -17,10 +16,9 @@
 
 
 	var b = f.Maybe(a.key2);
-	b.isNothing(); // -> false
+	b.hasValue(); // -> true 
 
 	var b = f.Maybe(a.key3);
-	b.isNothing(); // -> true , key3 does not exist in object a 
- 
+	b.hasValue(); // -> false , key3 does not exist in object a 
  
  ``` 

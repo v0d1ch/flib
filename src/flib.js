@@ -11,8 +11,8 @@ this.Maybe = function(value) {
 		bind: function(fn) {
 			return this;
 		},
-		isNothing: function() {
-			return true;
+		hasValue: function() {
+			return false;
 		},
 		val: function() {
 			throw new Error("cannot call val() nothing");
@@ -30,8 +30,8 @@ this.Maybe = function(value) {
 			bind: function(fn) {
 				return Maybe(fn.call(this, value));
 			},
-			isNothing: function() {
-				return false;
+			hasValue: function() {
+				return true;
 			},
 			val: function() {
 				return value;
@@ -46,9 +46,9 @@ this.Maybe = function(value) {
 	};
 
 	if (typeof value === 'undefined' || value === null)
-		return Nothing;
+		return new Nothing;
 
-	return Just(value);
+	return new Just(value);
 };
 
 
