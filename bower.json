@@ -1,0 +1,21 @@
+{
+  "name": "flib",
+  "description": "Functional javascript helper",
+  "main": "index.html",
+  "authors": [
+    "Sasa Bogicevic"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "functional"
+  ],
+  "homepage": "https://github.com/vodich/flib",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
