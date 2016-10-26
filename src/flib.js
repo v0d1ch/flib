@@ -43,9 +43,9 @@ var Maybe = function(value) {
 	};
 
 	if (typeof value === 'undefined' || value === null)
-		return new Nothing;
+		return Nothing;
 
-	return new Just(value);
+	return Just(value);
 };
 
 
