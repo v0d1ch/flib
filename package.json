@@ -1,14 +1,13 @@
 {
   "name": "flib",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Functional javascript helper",
   "main": "index.html",
   "license": "MIT",
   "dependencies": {
     "webpack-dev-server": "^1.15.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "test"
   },
@@ -21,7 +20,6 @@
     "functional"
   ],
   "author": "Sasa Bogicevic",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/vodich/functional-play/issues"
   },
