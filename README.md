@@ -1,1 +1,1 @@
-###Playing with Ramda ,PointFree and Bacon
+###fLib - functional helper library

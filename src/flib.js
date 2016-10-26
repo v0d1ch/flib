@@ -1,7 +1,7 @@
 /*
  * fl
  */
-var fl = function(){
+var f = function(){
 
 /*
  * Maybe
@@ -61,4 +61,4 @@ this.log = function(x) { console.log(x); return x;};
 
 };
 
-module.exports = new fl();
+module.exports = new f();
