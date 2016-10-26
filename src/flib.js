@@ -1,12 +1,9 @@
-/*
- * fl
- */
-var f = function(){
+(function(){
 
 /*
  * Maybe
  */
-this.Maybe = function(value) {
+var Maybe = function(value) {
 	var Nothing = {
 		bind: function(fn) {
 			return this;
@@ -52,13 +49,17 @@ this.Maybe = function(value) {
 };
 
 
-
-
-/*
- * Log
- */
-this.log = function(x) { console.log(x); return x;};
-
+var F = {
+	Maybe:Maybe
 };
 
-module.exports = new f();
+
+if (typeof exports === 'object') {
+	module.exports = F;
+} else if (typeof define === 'function' && define.amd) {
+	define(function() { return F; });
+} else {
+	this.F = F;
+}
+
+}.call(this));
