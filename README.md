@@ -1,13 +1,17 @@
-###fLib - functional helper library
+##fLib - functional helper library
 :: JS implementations of constructs from functional world that make your life easier in everyday work with JS
 
 :: Inspired by Haskell computational patterns
 
-##Available constructs
+###Instalation
+```
+$ bower install flib --save
+```
+###Available constructs
  - Maybe
 
  ```
-	var f = require('./flib');
+
 
 	var a = {
 		'key1':'a',
@@ -15,10 +19,11 @@
 	};
 
 
-	var b = f.Maybe(a.key2);
+	var b = F.Maybe(a.key2);
 	b.hasValue(); // -> true 
-
-	var b = f.Maybe(a.key3);
+	console.log(b.val()) // -> extract value, prints 'b'
+	
+	var b = F.Maybe(a.key3);
 	b.hasValue(); // -> false , key3 does not exist in object a 
- 
+        
  ``` 
