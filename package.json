@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Functional javascript helper",
   "main": "index.html",
+  "license": "MIT",
   "dependencies": {
     "webpack-dev-server": "^1.15.1"
   },
