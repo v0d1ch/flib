@@ -18,10 +18,14 @@ $ bower install flib --save
 
  var b = F.Maybe(a.key2);
  b.hasValue(); // -> true
- console.log(b.val()) // -> extract value, prints 'b'
+ 
+ // -> extract value, prints 'b'
+ console.log(b.val()) 
 
  var c = F.Maybe(a.key3);
- console.log(c.hasValue()); // -> prints false , key3 does not exist in object a
+ 
+ // -> prints false , key3 does not exist in object a
+ console.log(c.hasValue()); 
 
  var d = 'flib';
  function toUpper(x){return x.toUpperCase();}
@@ -30,14 +34,19 @@ $ bower install flib --save
  .bind(toUpper)
  .maybe('No name', F.id);
 
- console.log(e); // -> bind value to function, set default value, use Identity instead of anonimous function,  prints 'FLIB'
+ // -> bind value to function, set default value, use Identity instead of anonimous function,  prints 'FLIB'
+ console.log(e); 
 
  var f = F.Maybe(null).maybe('No name',F.id);
- console.log(f); // -> set default value , prints 'No name'
+ 
+ // -> set default value , prints 'No name'
+ console.log(f); 
 
- //fmap
- fmap :: f -> a -> M b
- console.log(F.fmap(toUpper,F.Maybe(f)).val()); // -> map function to value, value doesen't have to be Monadic,  prints 'NO NAME'
+ //fmap -> accepts M a or just a and returns M b
+ //fmap :: f -> M a -> M b
+ 
+ // -> map function to value, value doesen't have to be Monadic,  prints 'NO NAME'
+ console.log(F.fmap(toUpper,F.Maybe(f)).val()); 
 
 
 
