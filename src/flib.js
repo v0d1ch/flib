@@ -62,8 +62,8 @@
 	}
 
 
-	//fmap :: (f -> M a) -> M b
-	var fmap = function(fn,m){
+	//mmap :: (f -> M a) -> M b
+	var mmap = function(fn,m){
         if(m.toString() !== 'Just' && m.toString() !== 'Nothing') return Maybe(fn.call(self, m));
 
 		return Maybe(fn.call(self, m.val()));
@@ -71,7 +71,7 @@
 
 	var F = {
 		Maybe : Maybe,
-		fmap  : fmap,
+		mmap  : mmap,
 		id    : id
 	};
 
