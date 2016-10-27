@@ -1,12 +1,20 @@
 (function(){
 
+// Simple JS implementation of functional patterns that make life easier
+//
+// author: Sasa Bogicevic
+// email: brutallesale@gmail.com
+
+
+
 /*
  * Maybe
  */
 var Maybe = function(value) {
+	var self = this;
 	var Nothing = {
 		bind: function(fn) {
-			return this;
+			return self;
 		},
 		hasValue: function() {
 			return false;
@@ -25,7 +33,7 @@ var Maybe = function(value) {
 	var Just = function(value) {
 		return {
 			bind: function(fn) {
-				return Maybe(fn.call(this, value));
+				return Maybe(fn.call(self, value));
 			},
 			hasValue: function() {
 				return true;
@@ -34,7 +42,7 @@ var Maybe = function(value) {
 				return value;
 			},
 			maybe: function(def, fn) {
-				return fn.call(this, value);
+				return fn.call(self, value);
 			},
 			toString: function(){
 				return 'Just';
