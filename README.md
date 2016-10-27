@@ -10,45 +10,39 @@ $ bower install flib --save
 ###Available constructs
 
  ```
- //Maybe monad implementation
- var a = {
-	 'key1':'a',
-	 'key2':'b'
- };
+//Maybe monad implementation
+var a = {
+    'key1':'a',
+    'key2':'b'
+};
 
- var b = F.Maybe(a.key2);
- b.hasValue(); // -> true
- 
- // -> extract value, prints 'b'
- console.log(b.val()) 
+var b = F.Maybe(a.key2);
+b.hasValue(); // -> true
+console.log(b.val()) // -> extract value, prints 'b'
 
- var c = F.Maybe(a.key3);
- 
- // -> prints false , key3 does not exist in object a
- console.log(c.hasValue()); 
+var c = F.Maybe(a.key3);
+console.log(c.hasValue()); // -> false , key3 does not exist in object a
 
- var d = 'flib';
- function toUpper(x){return x.toUpperCase();}
+var d = 'flib';
+function toUpper(x){return x.toUpperCase();}
+function take2(x){return x[0] + x[1];}
 
- var e = F.Maybe(d)
- .bind(toUpper)
- .maybe('No name', F.id);
+var e = F.Maybe(d)
+.bind(toUpper)
+.maybe('No name', F.id);
 
- // -> bind value to function, set default value, use Identity instead of anonimous function,  prints 'FLIB'
- console.log(e); 
+console.log(e); // ->FLIB
 
- var f = F.Maybe(null).maybe('No name',F.id);
- 
- // -> set default value , prints 'No name'
- console.log(f); 
+var f = F.Maybe(null).maybe('No name',F.id);
+console.log(f); // -> 'No name'
 
- //fmap -> accepts M a or just a and returns M b
- //fmap :: f -> M a -> M b
- 
- // -> map function to value, value doesen't have to be Monadic,  prints 'NO NAME'
- console.log(F.fmap(toUpper,F.Maybe(f)).val()); 
+//fmap
+console.log(F.mmap(toUpper,F.Maybe(f)).val());
 
 
+var g = F.compose(take2, toUpper);
 
+///composability , prints FU
+console.log(g('functional'));
         
  ``` 
