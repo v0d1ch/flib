@@ -8,41 +8,37 @@
 $ bower install flib --save
 ```
 ###Available constructs
- - Maybe
 
  ```
+ //Maybe monad implementation
+ var a = {
+	 'key1':'a',
+	 'key2':'b'
+ };
 
-	//basic
-	var a = {
-		'key1':'a',
-		'key2':'b'
-	};
+ var b = F.Maybe(a.key2);
+ b.hasValue(); // -> true
+ console.log(b.val()) // -> extract value, prints 'b'
+
+ var c = F.Maybe(a.key3);
+ console.log(c.hasValue()); // -> false , key3 does not exist in object a
+
+ var d = 'flib';
+ function toUpper(x){return x.toUpperCase();}
+
+ var e = F.Maybe(d)
+ .bind(toUpper)
+ .maybe('No name', F.id);
+
+ console.log(e); // ->FLIB
+
+ var f = F.Maybe(null).maybe('No name',F.id);
+ console.log(f); // -> 'No name'
+
+ //fmap
+ console.log(F.fmap(toUpper,F.Maybe(f)).val());
 
 
-	var b = F.Maybe(a.key2);
-	b.hasValue(); // -> true 
-	console.log(b.val()) // -> extract value, prints 'b'
-	
-	var b = F.Maybe(a.key3);
-	b.hasValue(); // -> false , key3 does not exist in object a 
-	
-	//bind and maybe
-	var a = 'flib';
-	var b = F.Maybe(a).bind(function(x){
-		return x.toUpperCase();
-	}).maybe('No name', function(y){
-		return y;
-	});
-
-	console.log(b); // ->FLIB
-
-	var d = F.Maybe(null);
-
-	var e = d.maybe('No name', function(y){
-		return y;
-	});
-
-	console.log(e); // -> 'No name'
 
         
  ``` 
