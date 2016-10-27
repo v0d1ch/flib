@@ -1,5 +1,5 @@
 {
-  "name": "flib",
+  "name": "flib-js",
   "version": "0.0.4",
   "description": "Functional javascript helper",
   "main": "index.html",
