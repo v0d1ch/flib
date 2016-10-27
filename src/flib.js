@@ -1,73 +1,78 @@
 (function(){
 
-// Simple JS implementation of functional patterns that make life easier
-//
-// author: Sasa Bogicevic
-// email: brutallesale@gmail.com
+	// Simple JS implementation of functional patterns that make life easier
+	//
+	// author: Sasa Bogicevic
+	// email: brutallesale@gmail.com
 
 
-
-/*
- * Maybe
- */
-var Maybe = function(value) {
 	var self = this;
-	var Nothing = {
-		bind: function(fn) {
-			return self;
-		},
-		hasValue: function() {
-			return false;
-		},
-		val: function() {
-			throw new Error("cannot call val() nothing");
-		},
-		maybe: function(def, fn) {
-			return def;
-		},
-		toString: function(){
-			return 'Nothing';
-		}
-	};
 
-	var Just = function(value) {
-		return {
+	/*
+	* Maybe
+	*/
+	var Maybe = function(value) {
+		var Nothing = {
 			bind: function(fn) {
-				return Maybe(fn.call(self, value));
+				return self;
 			},
 			hasValue: function() {
-				return true;
+				return false;
 			},
 			val: function() {
-				return value;
+				throw new Error("cannot call val() nothing");
 			},
 			maybe: function(def, fn) {
-				return fn.call(self, value);
+				return def;
 			},
 			toString: function(){
-				return 'Just';
+				return 'Nothing';
 			}
 		};
+
+		var Just = function(value) {
+			return {
+				bind: function(fn) {
+					return Maybe(fn.call(self, value));
+				},
+				hasValue: function() {
+					return true;
+				},
+				val: function() {
+					return value;
+				},
+				maybe: function(def, fn) {
+					return fn.call(self, value);
+				},
+				toString: function(){
+					return 'Just';
+				}
+			};
+		};
+
+		if (typeof value === 'undefined' || value === null)
+			return Nothing;
+
+		return Just(value);
 	};
 
-	if (typeof value === 'undefined' || value === null)
-		return Nothing;
 
-	return Just(value);
-};
+	//fmap :: (f -> M a) -> M b
+	var fmap = function(fn,m){
+		return Maybe(fn.call(self, m.val()));
+	}
+
+	var F = {
+		Maybe:Maybe
+	};
 
 
-var F = {
-	Maybe:Maybe
-};
-
-
-if (typeof exports === 'object') {
-	module.exports = F;
-} else if (typeof define === 'function' && define.amd) {
-	define(function() { return F; });
-} else {
-	this.F = F;
-}
+	if (typeof exports === 'object') {
+		module.exports = F;
+	} else if (typeof define === 'function' && define.amd) {
+		define(function() { return F; });
+	} else {
+		this.F = F;
+	}
 
 }.call(this));
