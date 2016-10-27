@@ -56,6 +56,11 @@
 		return Just(value);
 	};
 
+	//Id :: a -> a
+	var id = function(x){
+		return x;
+	}
+
 
 	//fmap :: (f -> M a) -> M b
 	var fmap = function(fn,m){
@@ -63,7 +68,9 @@
 	}
 
 	var F = {
-		Maybe:Maybe
+		Maybe : Maybe,
+		fmap  : fmap,
+		id    : id
 	};
 
 
