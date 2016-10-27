@@ -1,6 +1,6 @@
 {
   "name": "flib-js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Functional javascript helper",
   "main": "index.html",
   "license": "MIT",
