@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/vodich/flib.svg?branch=master)](https://travis-ci.org/vodich/flib)
 ##fLib - functional helper library
 :: JS implementations of constructs from functional world that make your life easier in everyday work with JS
 
