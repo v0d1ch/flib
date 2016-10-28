@@ -6,6 +6,8 @@
 ###Instalation
 ```
 $ bower install flib --save
+
+$ npm i flib-js
 ```
 ###Available constructs
 
