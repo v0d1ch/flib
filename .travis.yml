@@ -1,14 +1,13 @@
-language : node_js
+language: node_js
+
+node_js:
+  - stable
+
 
 deploy:
   provider: npm
-  email: "brutallesale@gmail.com"
-  api_key: "aeec6d14-f50a-42c1-b499-cb32bc228c14"
+  email: brutallesale@gmail.com
+  api_key: $NPM_TOKEN
   on:
     tags: true
-
-# whitelist
-branches:
-  only:
-    - master
 
