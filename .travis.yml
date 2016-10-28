@@ -1,1 +1,14 @@
-language:javascript
+language : javascript
+
+deploy:
+  provider: npm
+  email: "brutallesale@gmail.com"
+  api_key: "aeec6d14-f50a-42c1-b499-cb32bc228c14"
+  on:
+    tags: true
+
+# whitelist
+branches:
+  only:
+    - master
+
