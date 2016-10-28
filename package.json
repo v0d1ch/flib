@@ -1,17 +1,20 @@
 {
   "name": "flib-js",
-  "version": "0.0.7",
   "description": "Functional javascript helper",
   "main": "index.html",
   "license": "MIT",
   "dependencies": {
     "webpack-dev-server": "^1.15.1"
   },
-  "devDependencies": {},
-  "scripts": {},
+  "devDependencies": {
+    "semantic-release": "^4.3.5"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vodich/flib.git"
+    "url": "https://github.com/vodich/flib.git"
   },
   "keywords": [
     "javascript",

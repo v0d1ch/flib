@@ -1,9 +1,12 @@
+sudo: false
 language: node_js
-
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: brutallesale@gmail.com
 node_js:
-  - stable
-
-
+  - '6'
 deploy:
   provider: npm
   email: brutallesale@gmail.com
@@ -11,3 +14,12 @@ deploy:
   on:
     tags: true
 
+before_install:
+  - npm i -g npm@^2.0.0
+before_script:
+  - npm prune
+after_success:
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
