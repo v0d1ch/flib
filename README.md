@@ -7,6 +7,8 @@
 ```
 $ bower install flib --save
 ```
+###Wiki
+Take a look at *[wiki](https://github.com/vodich/flib/wiki "wiki")* for examples
 ###Available constructs
 
  ```
