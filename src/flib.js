@@ -1,11 +1,5 @@
 (function(){
 
-	// Simple JS implementation of functional patterns that make life easier
-	//
-	// author: Sasa Bogicevic
-	// email: brutallesale@gmail.com
-
-
 	var self = this;
 
 	/*
@@ -103,10 +97,10 @@
 		compose : compose,
 		Maybe   : Maybe,
 		mmap    : mmap,
-		id      : id,
+		id      : id
 	};
 
-
+	/* istanbul ignore next */
 	if (typeof exports === 'object') {
 		module.exports = F;
 	} else if (typeof define === 'function' && define.amd) {
