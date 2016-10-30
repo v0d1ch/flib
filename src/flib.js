@@ -61,17 +61,6 @@
 		return x;
 	}
 
-	var reverse = function reverse(fn, scope) {
-		return function () {
-			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-				args[_key] = arguments[_key];
-			}
-
-			return fn.apply(scope || undefined, args.reverse());
-		};
-	};
-
-
 	//curry
 	var curry1 = function _curry1(fn) {
 		return function f1(a) {
@@ -88,7 +77,7 @@
 		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
 			args[_key] = arguments[_key];
 		}
-		var fns = args.reverse();
+		var fns = args
 
 		return function (result) {
 			for (var i = fns.length - 1; i > -1; i--) {
@@ -101,6 +90,9 @@
 
 	//mmap :: (f -> M a) -> M b
 	var mmap = function mmap(fn,m){
+		if(!m){
+			return Maybe(m);
+		}
 		if(m.toString() !== 'Just' && m.toString() !== 'Nothing') return Maybe(fn.call(self, m));
 
 		return Maybe(fn.call(self, m.val()));
@@ -111,7 +103,7 @@
 		compose : compose,
 		Maybe   : Maybe,
 		mmap    : mmap,
-		id      : id
+		id      : id,
 	};
 
 
