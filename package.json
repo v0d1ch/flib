@@ -7,12 +7,15 @@
     "webpack-dev-server": "^1.15.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.14",
     "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
     "semantic-release": "^4.3.5"
   },
   "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",

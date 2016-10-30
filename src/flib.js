@@ -20,7 +20,7 @@
 				return false;
 			},
 			val: function() {
-				throw new Error("cannot call val() nothing");
+				throw new TypeError("cannot call val() on Nothing");
 			},
 			maybe: function(def, fn) {
 				return def;

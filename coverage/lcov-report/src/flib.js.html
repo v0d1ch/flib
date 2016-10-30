@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/flib.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> flib.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>17/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">19.05% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>4/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">35.42% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>17/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">(function(){
+&nbsp;
+	// Simple JS implementation of functional patterns that make life easier
+	//
+	// author: Sasa Bogicevic
+	// email: brutallesale@gmail.com
+&nbsp;
+&nbsp;
+	var self = this;
+&nbsp;
+	/*
+	* Maybe
+	*/
+	var Maybe = function(value) {
+		var Nothing = {
+			bind: <span class="fstat-no" title="function not covered" >function(fn) {</span>
+<span class="cstat-no" title="statement not covered" >				return self;</span>
+			},
+			hasValue: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >				return false;</span>
+			},
+			val: function() {
+				throw new TypeError("cannot call val() on Nothing");
+			},
+			maybe: <span class="fstat-no" title="function not covered" >function(def, fn) {</span>
+<span class="cstat-no" title="statement not covered" >				return def;</span>
+			},
+			toString: function(){
+				return 'Nothing';
+			}
+		};
+&nbsp;
+		var Just = <span class="fstat-no" title="function not covered" >function Just(value) {</span>
+<span class="cstat-no" title="statement not covered" >			return {</span>
+				bind: <span class="fstat-no" title="function not covered" >function(fn) {</span>
+<span class="cstat-no" title="statement not covered" >					return Maybe(fn.call(self, value));</span>
+				},
+				hasValue: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >					return true;</span>
+				},
+				val: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >					return value;</span>
+				},
+				maybe: <span class="fstat-no" title="function not covered" >function(def, fn) {</span>
+<span class="cstat-no" title="statement not covered" >					return fn.call(self, value);</span>
+				},
+				toString: <span class="fstat-no" title="function not covered" >function(){</span>
+<span class="cstat-no" title="statement not covered" >					return 'Just';</span>
+				}
+			};
+		};
+&nbsp;
+		<span class="missing-if-branch" title="else path not taken" >E</span>if (typeof value === 'undefined' || value === null)
+			return Nothing;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return Just(value);</span>
+	};
+&nbsp;
+	//Id :: a -&gt; a
+	var id = <span class="fstat-no" title="function not covered" >function id(x){</span>
+<span class="cstat-no" title="statement not covered" >		return x;</span>
+	}
+&nbsp;
+	var reverse = <span class="fstat-no" title="function not covered" >function reverse(fn, scope) {</span>
+<span class="cstat-no" title="statement not covered" >		return <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			for (var _len = arguments.length, args = Array(_len), _key = 0; _key &lt; _len; _key++) {</span>
+<span class="cstat-no" title="statement not covered" >				args[_key] = arguments[_key];</span>
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			return fn.apply(scope || undefined, args.reverse());</span>
+		};
+	};
+&nbsp;
+&nbsp;
+	//curry
+	var curry1 = <span class="fstat-no" title="function not covered" >function _curry1(fn) {</span>
+<span class="cstat-no" title="statement not covered" >		return <span class="fstat-no" title="function not covered" >function f1(a) {</span></span>
+<span class="cstat-no" title="statement not covered" >			if (arguments.length === 0 || a != null &amp;&amp; typeof a === 'object' ) {</span>
+<span class="cstat-no" title="statement not covered" >				return f1;</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				return fn.apply(this, arguments);</span>
+			}
+		};
+	};
+&nbsp;
+	//compose :: (b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c
+	var compose = <span class="fstat-no" title="function not covered" >function compose() {</span>
+<span class="cstat-no" title="statement not covered" >		for (var _len = arguments.length, args = Array(_len), _key = 0; _key &lt; _len; _key++) {</span>
+<span class="cstat-no" title="statement not covered" >			args[_key] = arguments[_key];</span>
+		}
+<span class="cstat-no" title="statement not covered" >		var fns = args.reverse();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return <span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >			for (var i = fns.length - 1; i &gt; -1; i--) {</span>
+<span class="cstat-no" title="statement not covered" >				result = fns[i].call(this, result);</span>
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			return result;</span>
+		};
+	};
+&nbsp;
+	//mmap :: (f -&gt; M a) -&gt; M b
+	var mmap = <span class="fstat-no" title="function not covered" >function mmap(fn,m){</span>
+<span class="cstat-no" title="statement not covered" >		if(m.toString() !== 'Just' &amp;&amp; m.toString() !== 'Nothing') <span class="cstat-no" title="statement not covered" >return Maybe(fn.call(self, m));</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return Maybe(fn.call(self, m.val()));</span>
+	}
+&nbsp;
+	var F = {
+		curry1   : curry1,
+		compose : compose,
+		Maybe   : Maybe,
+		mmap    : mmap,
+		id      : id
+	};
+&nbsp;
+&nbsp;
+	<span class="missing-if-branch" title="else path not taken" >E</span>if (typeof exports === 'object') {
+		module.exports = F;
+	} else <span class="cstat-no" title="statement not covered" >if (typeof define === 'function' &amp;&amp; define.amd) {</span>
+<span class="cstat-no" title="statement not covered" >		define(<span class="fstat-no" title="function not covered" >function() {</span> <span class="cstat-no" title="statement not covered" >return F; </span>});</span>
+	} else {
+<span class="cstat-no" title="statement not covered" >		this.F = F;</span>
+	}
+&nbsp;
+}.call(this));
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Oct 30 2016 11:10:25 GMT+0100 (CET)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
