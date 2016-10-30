@@ -101,6 +101,9 @@
 
 	//mmap :: (f -> M a) -> M b
 	var mmap = function mmap(fn,m){
+		if(!m){
+			return Maybe(m);
+		}
 		if(m.toString() !== 'Just' && m.toString() !== 'Nothing') return Maybe(fn.call(self, m));
 
 		return Maybe(fn.call(self, m.val()));
