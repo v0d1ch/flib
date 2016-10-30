@@ -1,7 +1,4 @@
-[![Build Status](https://travis-ci.org/vodich/flib.svg?branch=master)](https://travis-ci.org/vodich/flib) [![Coverage Status](https://coveralls.io/repos/github/vodich/flib/badge.svg?branch=develop)](https://coveralls.io/github/vodich/flib?branch=develop) <a href="https://scan.coverity.com/projects/vodich-flib">
-  <img alt="Coverity Scan Build Status"
-       src="https://scan.coverity.com/projects/10672/badge.svg"/>
-</a>
+[![Build Status](https://travis-ci.org/vodich/flib.svg?branch=master)](https://travis-ci.org/vodich/flib) [![Coverage Status](https://coveralls.io/repos/github/vodich/flib/badge.svg?branch=develop)](https://coveralls.io/github/vodich/flib?branch=develop)
 ##fLib - functional helper library
 :: JS implementations of constructs from functional world that make your life easier in everyday work with JS
 
