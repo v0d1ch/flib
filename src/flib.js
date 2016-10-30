@@ -107,7 +107,7 @@
 	}
 
 	var F = {
-		curry1   : curry1,
+		curry1  : curry1,
 		compose : compose,
 		Maybe   : Maybe,
 		mmap    : mmap,
