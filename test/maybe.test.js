@@ -1,5 +1,5 @@
 var F = require('../src/flib');
-var chai = require('chai');
+var chai = require('../node_modules/chai/lib/chai');
 var assert = chai.assert;
 
 it('Nothing - toString should return Nothing', function() {
