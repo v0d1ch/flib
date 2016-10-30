@@ -25,12 +25,20 @@ describe('mmap', function(){
 		assert.equal(map.toString(),'Nothing');
 	});
 
+	it('if called with one fnc and false var it should always return Just', function() {
+		var test = false;
+		var map = F.mmap(add1, test);
+		assert.equal(map.toString(),'Just');
+	});
+
+	it('if called with one fnc and true var it should always return Just', function() {
+		var test = true;
+		var map = F.mmap(add1, test);
+		assert.equal(map.toString(),'Just');
+	});
 });
 
 function add1(x){
 	return x + 1;
 }
 
-function mult2(x){
-	return x * 2;
-}
