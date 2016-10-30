@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/vodich/flib.svg?branch=master)](https://travis-ci.org/vodich/flib)
-[![Coverage Status](https://coveralls.io/repos/<account>/<repository>/badge.svg?branch=master)](https://coveralls.io/github/vodich/flib?branch=develop)
+
+[![Coverage Status](https://coveralls.io/repos/github/vodich/flib/badge.svg)](https://coveralls.io/github/vodich/flib)
 ##fLib - functional helper library
 :: JS implementations of constructs from functional world that make your life easier in everyday work with JS
 
