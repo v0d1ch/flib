@@ -68,10 +68,7 @@
 
 	//compose :: (b -> c) -> (a -> b) -> a -> c
 	var compose = function compose() {
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
-		var fns = args
+		var fns = arguments;
 
 		return function (result) {
 			for (var i = fns.length - 1; i > -1; i--) {
