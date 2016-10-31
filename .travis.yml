@@ -18,7 +18,7 @@ before_install:
   - npm i -g npm@^2.0.0
 
 script:
-	- npm run test
+  - npm run test
 after_success:
   - npm run semantic-release
   - npm run coveralls
