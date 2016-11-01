@@ -55,18 +55,22 @@
 		return x;
 	}
 
-	//curry
-	var curry1 = function _curry1(fn) {
-		return function f1(a) {
-			if (arguments.length === 0 || a != null && typeof a === 'object' ) {
-				return f1;
-			} else {
-				return fn.apply(this, arguments);
-			}
-		};
-	};
+    //curry
+    var curry = function(func, context) {
+        var acc, args = Array.prototype.slice.call(arguments, 2);
+        return acc = function() {
+            args = args.concat(Array.prototype.slice.call(arguments, 0));
+            if (args.length >= func.length) {
+                return func.apply(context, args);
+            } else {
+                return function() {
+                    return acc.apply(this, arguments);
+                }
+            }
+        }
+    }
 
-	//compose :: (b -> c) -> (a -> b) -> a -> c
+    //compose :: (b -> c) -> (a -> b) -> a -> c
 	var compose = function compose() {
 		var fns = arguments;
 
@@ -90,7 +94,7 @@
 	}
 
 	var F = {
-		curry1  : curry1,
+		curry   : curry,
 		compose : compose,
 		Maybe   : Maybe,
 		mmap    : mmap,
