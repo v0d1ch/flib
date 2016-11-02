@@ -16,6 +16,11 @@ describe('curry', function(){
 		test(2);
 		assert.equal(test(3),6);
 	});
+	it('it should always return val if passed all arguments', function() {
+		var test =  F.curry(mult2);
+		var test2 = test(2)(2);
+		assert.equal(test2, 4);
+	});
 });
 
 function mult2(x, y){
