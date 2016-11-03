@@ -21,6 +21,10 @@ describe('compose', function(){
 		assert.equal(test,'function');
 	});
 
+	it('if called with three fncs and val it should always return result val', function() {
+		var test =  F.compose(add1, mult2, add1)(2);
+		assert.equal(test,7);
+	});
 });
 
 function add1(x){

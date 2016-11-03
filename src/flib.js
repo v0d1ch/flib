@@ -56,12 +56,12 @@
 	}
 
     //curry
-    var curry = function(func, context) {
+    var curry = function(func) {
         var acc, args = Array.prototype.slice.call(arguments, 2);
         return acc = function() {
             args = args.concat(Array.prototype.slice.call(arguments, 0));
             if (args.length >= func.length) {
-                return func.apply(context, args);
+                return func.apply(this, args);
             } else {
                 return function() {
                     return acc.apply(this, arguments);
@@ -104,10 +104,10 @@
 	/* istanbul ignore next */
 	if (typeof exports === 'object') {
 		module.exports = F;
-	} else if (typeof define === 'function' && define.amd) {
-		define(function() { return F; });
+	} else  if (typeof define === 'function' && define.amd) {
+		define( function() { return F; });
 	} else {
 		this.F = F;
 	}
 
-}.call(this));
+}).call(this);
