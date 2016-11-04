@@ -1,6 +1,6 @@
 {
   "name": "flib",
-  "version": "0.0.7",
+  "version": "0.2.1",
   "description": "Functional javascript helper",
   "main": "src/flib.js",
   "authors": [
