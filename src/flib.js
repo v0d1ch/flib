@@ -133,7 +133,14 @@
 		compose : compose,
 		Maybe   : Maybe,
 		mmap    : mmap,
-		id      : id
+		id      : id,
+	    maybeO  : maybeO,
+	    maybeS  : maybeS,
+	    maybeN  : maybeN,
+	    maybeA  : maybeA,
+	    maybeB  : maybeB,
+	    maybeOr : maybeOr
+
 	};
 
 	/* istanbul ignore next */
