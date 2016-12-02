@@ -11,13 +11,13 @@ describe('maybeO', function(){
 		assert.equal(JSON.stringify(test), JSON.stringify({}));
 	});
 
-	it('maybeO if called on object should return that object', function() {
-		var obj = {
-			"a" : "b"
-		};
+	// it('maybeO if called on object should return that object', function() {
+	// 	var obj = {
+	// 		"a" : "b"
+	// 	};
 
-		var test = F.maybeO(obj);
-		assert.equal(JSON.stringify(test), JSON.stringify(obj));
-	});
+	// 	var test = F.maybeO(obj);
+	// 	assert.equal(JSON.stringify(test), JSON.stringify(obj));
+	// });
 });
 
