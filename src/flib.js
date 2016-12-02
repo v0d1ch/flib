@@ -44,11 +44,46 @@
 			};
 		};
 
-		if (typeof value === 'undefined' || value === null)
-			return Nothing;
-
+		if (typeof value === 'undefined' || value === null) return Nothing;
+		if (objPropsNotDefined(value)) return Nothing;
 		return Just(value);
 	};
+
+
+	function maybeO(item){
+		return Maybe(item).maybe({}, F.id);
+	}
+
+	function maybeS(item){
+		return Maybe(item).maybe('', F.id);
+	}
+
+	function maybeN(item){
+		return Maybe(item).maybe(0, F.id);
+	}
+
+	function maybeA(item){
+		return Maybe(item).maybe([], F.id);
+	}
+
+	function maybeB(item){
+		return Maybe(item).maybe(false, F.id);
+	}
+
+	function maybeOr(item, def){
+		return Maybe(item).maybe(def, F.id);
+	}
+
+	function objPropsNotDefined(o){
+		var props = Object.getOwnPropertyNames(o);
+		for(var i in props){
+			if(!o.hasOwnProperty(i)){
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 	//Id :: a -> a
 	var id = function id(x){
